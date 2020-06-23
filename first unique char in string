@@ -1,0 +1,10 @@
+class Solution {
+    public int firstUniqChar(String s) {
+    
+        for( char character: s.toCharArray()){
+            if(s.indexOf(character) == s.lastIndexOf(character))
+                return s.indexOf(character);
+        }
+        return -1;
+    }
+}
