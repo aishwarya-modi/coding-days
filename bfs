@@ -1,0 +1,116 @@
+	BFS
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	int a[10][10], q[10], visited[10], n, i, j, f = 0, r = -1;
+
+	int main() 
+	{
+	int v;
+	printf("\n Enter the number of vertices:");
+	scanf("%d",&n);
+	
+	 //read the adjecency matrix
+	printf("\n Enter graph data in matrix form:\n");
+	for(i=1; i<=n; i++) {
+		for(j=1;j<=n;j++) {
+			scanf("%d", &a[i][j]);
+		}
+	}
+	for(i=1; i <= n; i++) {
+		q[i] = 0;
+		visited[i] = 0;
+	}
+	
+	bfs(1);
+
+	printf("\n The node which are reachable are:\n");
+	
+	for(i=1; i <= n; i++) {
+		if(visited[i])
+			printf("%d\t", i);
+		else {
+			printf("\n Bfs is not possible. Not all nodes are reachable");
+			break;
+		}
+	}
+	return (EXIT_SUCCESS);
+	}
+	void bfs(int i) 
+	{
+	for(j = 1; j <= n; j++)
+		if(a[i][j] && !visited[j])
+			q[++r] = j;
+	if(f <= r) {
+		visited[q[f]] = 1;
+		bfs(q[f++]);
+	}
+	}
+
+
+
+	Enter the number of vertices:3
+
+	Enter graph data in matrix form:
+	0 1 1
+	1 0 1
+	1 1 0
+
+ 	Enter the starting vertex:1
+
+ 	The node which are reachable are:
+
+	1       2       3
+
+
+
+	DFS
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	void DFS(int);
+	int G[10][10],visited[10],n;    
+
+	int main() {
+    	int i,j;
+    	printf("Enter number of vertices:");
+    	scanf("%d",&n);
+ 
+    	//read the adjecency matrix
+   
+ 	printf("\nEnter adjecency matrix of the graph:");
+      	for(i=1;i<=n;i++)
+       	for(j=1;j<=n;j++)
+            scanf("%d",&G[i][j]);
+ 
+    	//visited is initialized to zero
+   	for(i=1;i<=n;i++)
+        visited[i]=0;
+       	DFS(1);
+    	return (EXIT_SUCCESS);
+	}
+	void DFS(int i)
+	{
+    	int j;
+    	printf("\n%d",i);
+    	visited[i]=1;
+    
+    	for(j=1;j<=n;j++)
+       		if(!visited[j]&&G[i][j]==1)
+        		DFS(j);
+	}
+
+
+	Enter number of vertices:3
+
+	Enter adjecency matrix of the graph:
+	
+	0 1 1
+	1 0 1
+	1 1 0
+
+	1
+	2
+	3
+	
+
