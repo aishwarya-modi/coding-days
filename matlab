@@ -1,9 +1,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Short MatLab tutorial
+% 
 %
-%   Aaron Shon & Rajesh Rao, University of Washington
-%   16 April 2002
+%   
 %
 %
 %   * THE 2 MOST IMPORTANT COMMANDS:
